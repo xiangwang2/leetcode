@@ -1,16 +1,15 @@
 package src.main.pro.xw.leetcode.mycalendar;
 
-import javafx.util.Pair;
-
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 public class MyCalendarTwo {
 
-    private List<Pair<Integer, Integer>> times;
-
+    private List<Map.Entry<Integer, Integer>> times;
 
     public static void main(String[] args) {
-        MyCalendarTwo  myCalendar = new MyCalendarTwo();
+        MyCalendarTwo myCalendar = new MyCalendarTwo();
         System.out.println(myCalendar.book(10, 20));
         System.out.println(myCalendar.book(50, 60));
         System.out.println(myCalendar.book(10, 40));
@@ -25,8 +24,8 @@ public class MyCalendarTwo {
 
     public boolean book(int start, int end) {
         int repead = 0;
-        Pair<Integer, Integer> cur = new Pair<>(start, end);
-        for (Pair<Integer, Integer> time : times) {
+        Map.Entry<Integer, Integer> cur = Map.entry(start, end);
+        for (Map.Entry<Integer, Integer> time : times) {
             if (isRepted(time, cur)) {
                 repead++;
             }
@@ -38,13 +37,13 @@ public class MyCalendarTwo {
         return true;
     }
 
-    private boolean isRepted(Pair<Integer,Integer> a, Pair<Integer, Integer> b) {
+    private boolean isRepted(Map.Entry<Integer, Integer> a, Map.Entry<Integer, Integer> b) {
         int aStart = a.getKey();
         int aEnd = a.getValue();
         int bStart = b.getKey();
         int bEnd = b.getValue();
 
-        if (aStart >bStart && aStart< bEnd) {
+        if (aStart > bStart && aStart < bEnd) {
             return true;
         }
 

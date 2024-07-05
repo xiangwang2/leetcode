@@ -1,8 +1,6 @@
 package src.main.pro.xw.leetcode.cbtinserter;
 
 
-import javafx.scene.chart.ValueAxis;
-import sun.reflect.generics.tree.Tree;
 
 import java.util.LinkedList;
 import java.util.List;
